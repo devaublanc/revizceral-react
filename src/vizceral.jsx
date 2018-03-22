@@ -1,11 +1,13 @@
 'use strict';
 
-const React = require('react').React; // eslint-disable-line import/no-unresolved, import/no-extraneous-dependencies
-const isEqual = require('lodash').isEqual;
-const PropTypes = require('prop-types').PropTypes;
-const VizceralGraph = require('vizceral').VizceralGraph;
 
-function getPerformanceNow () {
+import React from 'react'; // eslint-disable-line import/no-unresolved, import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
+import VizceralGraph from 'vizceral';
+
+const isEqual = require('lodash').isEqual;
+
+function getPerformanceNow() {
   const g = window;
   if (g != null) {
     const perf = g.performance;
