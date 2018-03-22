@@ -1,6 +1,6 @@
 'use strict';
 
-import { isEqual } from 'lodash';
+import loadash from 'lodash';
 import React from 'react'; // eslint-disable-line import/no-unresolved, import/no-extraneous-dependencies
 import PropTypes from 'prop-types'
 import VizceralGraph from 'vizceral';
@@ -74,11 +74,11 @@ class Vizceral extends React.Component {
     });
 
 
-    if (!isEqual(this.props.filters, Vizceral.defaultProps.filters)) {
+    if (!loadash.isEqual(this.props.filters, Vizceral.defaultProps.filters)) {
       this.vizceral.setFilters(this.props.filters);
     }
 
-    if (!isEqual(this.props.definitions, Vizceral.defaultProps.definitions)) {
+    if (!loadash.isEqual(this.props.definitions, Vizceral.defaultProps.definitions)) {
       this.vizceral.updateDefinitions(this.props.definitions);
     }
 
@@ -96,29 +96,29 @@ class Vizceral extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (!isEqual(nextProps.styles, this.props.styles)) {
+    if (!loadash.isEqual(nextProps.styles, this.props.styles)) {
       this.updateStyles(nextProps.styles);
     }
-    if (!isEqual(nextProps.view, this.props.view) ||
-        !isEqual(nextProps.objectToHighlight, this.props.objectToHighlight)) {
+    if (!loadash.isEqual(nextProps.view, this.props.view) ||
+        !loadash.isEqual(nextProps.objectToHighlight, this.props.objectToHighlight)) {
       this.vizceral.setView(nextProps.view, nextProps.objectToHighlight);
     }
 
-    if (!isEqual(nextProps.filters, this.props.filters)) {
+    if (!loadash.isEqual(nextProps.filters, this.props.filters)) {
       this.vizceral.setFilters(nextProps.filters);
     }
-    if (!isEqual(nextProps.showLabels, this.props.showLabels) ||
-        !isEqual(nextProps.allowDraggingOfNodes, this.props.allowDraggingOfNodes)) {
+    if (!loadash.isEqual(nextProps.showLabels, this.props.showLabels) ||
+        !loadash.isEqual(nextProps.allowDraggingOfNodes, this.props.allowDraggingOfNodes)) {
       this.vizceral.setOptions({
         allowDraggingOfNodes: nextProps.allowDraggingOfNodes,
         showLabels: nextProps.showLabels
       });
     }
-    if (!isEqual(nextProps.modes, this.props.modes)) {
+    if (!loadash.isEqual(nextProps.modes, this.props.modes)) {
       this.vizceral.setModes(nextProps.modes);
     }
 
-    if (!isEqual(nextProps.definitions, this.props.definitions)) {
+    if (!loadash.isEqual(nextProps.definitions, this.props.definitions)) {
       this.vizceral.updateDefinitions(nextProps.definitions);
     }
 
