@@ -1,11 +1,9 @@
 'use strict';
 
-
+import { isEqual } from 'lodash';
 import React from 'react'; // eslint-disable-line import/no-unresolved, import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import VizceralGraph from 'vizceral';
-
-const isEqual = require('lodash').isEqual;
 
 function getPerformanceNow() {
   const g = window;
